@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: fub-lead-assignment
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn fub_assignment_server:app
+    disk:
+      name: fub-data
+      mountPath: /data
+      sizeGB: 1
